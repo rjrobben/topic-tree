@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+h1 {
+    color: #343a40;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.controls {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls label {
+    font-weight: bold;
+}
+
+.controls select,
+.controls button {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #dee2e6;
+}
+
+#taxonomy-tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#taxonomy-tree li {
+    margin: 5px 0;
+    position: relative;
+}
+
+/* Basic expand/collapse toggle styling */
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    user-select: none; /* Prevent text selection */
+}
+
+.toggle::before {
+    content: '+'; /* Default to collapsed */
+}
+
+.toggle.expanded::before {
+    content: '-'; /* Change to minus when expanded */
+}
+
+/* Hide children by default if parent is not expanded */
+li > ul {
+    display: none;
+}
+
+li.expanded > ul {
+    display: block;
+}
+
+/* Style for the editable span */
+.node-name {
+    cursor: text;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.node-name:hover {
+    background-color: #e9ecef;
+}
+
+.node-name:focus {
+    outline: 1px solid #007bff;
+    background-color: #fff;
+}
+
+/* Style for the code */
+.node-code {
+    font-weight: bold;
+    color: #6c757d;
+    margin-right: 5px;
+}
+
+/* Level filtering */
+.hidden-by-filter {
+    display: none !important; /* Override other display rules */
+}
