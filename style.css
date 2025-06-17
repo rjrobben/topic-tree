@@ -106,3 +106,85 @@ li.expanded > ul {
 .hidden-by-filter {
     display: none !important; /* Override other display rules */
 }
+
+/* Level-based Syntax Highlighting */
+.level-1 .node-name { color: #7aa2f7; } /* Blue */
+.level-2 .node-name { color: #9ece6a; } /* Green */
+.level-3 .node-name { color: #bb9af7; } /* Purple */
+.level-4 .node-name { color: #ff9e64; } /* Orange */
+.level-5 .node-name { color: #e0af68; } /* Yellow/Gold */
+.level-6 .node-name { color: #c0caf5; } /* Light Grey/Subtle */
+/* Add more or cycle if needed */
+.level-7 .node-name { color: #7dcfff; } /* Cyan */
+.level-8 .node-name { color: #f7768e; } /* Red */
+/* Default color for deeper levels if not specified */
+li:not([class*="level-"]) .node-name { color: #212529; } /* Default text color */
+
+/* Statistics Container Styling */
+.stats {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.stats p {
+    margin: 5px 0;
+}
+
+/* Add Child Button Styling */
+.add-child-btn {
+    visibility: hidden; /* Hide by default */
+    margin-left: 8px;
+    padding: 0px 5px; /* Smaller padding */
+    font-size: 0.8em; /* Smaller font */
+    line-height: 1.2;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #e9ecef;
+    vertical-align: middle; /* Align with text */
+    opacity: 0; /* Start faded out */
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Fade transition, delay visibility change */
+}
+
+li:hover > .add-child-btn {
+    visibility: visible; /* Show on li hover */
+    opacity: 1; /* Fade in */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.add-child-btn:hover {
+    background-color: #dee2e6;
+}
+
+/* Delete Node Button Styling */
+.delete-node-btn {
+    visibility: hidden; /* Hide by default */
+    margin-left: 4px; /* Smaller margin */
+    padding: 0px 5px; /* Smaller padding */
+    font-size: 0.8em; /* Smaller font */
+    line-height: 1.2;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    vertical-align: middle; /* Align with text */
+    opacity: 0; /* Start faded out */
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Fade transition, delay visibility change */
+}
+
+li:hover > .delete-node-btn {
+    visibility: visible; /* Show on li hover */
+    opacity: 1; /* Fade in */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.delete-node-btn:hover {
+    background-color: #f5c6cb; /* Slightly darker red on hover */
+    color: #721c24;
+}
